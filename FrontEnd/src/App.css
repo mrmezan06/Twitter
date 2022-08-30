@@ -47,3 +47,8 @@
   background: transparent;
   border: 2px solid var(--orange);
 }
+
+/* Removing Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
