@@ -1,6 +1,6 @@
 # Twitter Clone
 
-# Front End
+## Front End
 
 ### Technology
 
@@ -10,7 +10,7 @@
 ![React-Unicons](https://img.shields.io/badge/React-Unicons-orange?style=for-the-badge&logo=react)
 ![CSS](https://img.shields.io/badge/CSS-orange?style=for-the-badge&logo=css3)
 
-## Social Media ![](https://img.shields.io/badge/Status-Available-brightgreen?logo=Statuspage)
+### Social Media ![](https://img.shields.io/badge/Status-Available-brightgreen?logo=Statuspage)
 
 <br />
 
@@ -22,7 +22,7 @@
 [![Gmail](https://img.shields.io/badge/-mrmezan06@gmail.com-%23591408?logo=Gmail&logoColor=%23EA4335)](mailto:mrmezan06@gmail.com)&nbsp;
 <br />
 
-## Website ![](https://img.shields.io/badge/Server-Live-brightgreen)
+### Website ![](https://img.shields.io/badge/Server-Live-brightgreen)
 
 <br />
 
@@ -38,7 +38,7 @@
 <!-- [![Al Quran](https://img.shields.io/badge/-Al%20Quran-blueviolet?logo=PHP&logoColor=white)](http://bookszone.top/) -->
 <br />
 
-## PC Configuration ![PC Configuration](https://img.shields.io/badge/PC-Configuration-brightgreen)
+### PC Configuration ![PC Configuration](https://img.shields.io/badge/PC-Configuration-brightgreen)
 
 [![AMD Processor](https://img.shields.io/badge/Processor-Amd%20Ryzen%205-orange?style=for-the-badge&logo=amd&logoColor=red)](https://mrmezan06.github.io) &nbsp;
 [![RAM](https://img.shields.io/badge/RAM-Corsair%2016GB-brightgreen?style=for-the-badge&logo=Corsair&logoColor=brightgreen)](https://mrmezan06.github.io) &nbsp;
@@ -53,7 +53,7 @@
 [![Wireless](https://img.shields.io/badge/Wifi-TP%20LINK%20Adapter-%234ACBD6?style=for-the-badge&logo=TP-Link&logoColor=%234ACBD6)](https://mrmezan06.github.io) &nbsp;
 [![Bluetooth](https://img.shields.io/badge/Bluetooth-Bluetooth%20Adapter-%230082FC?style=for-the-badge&logo=bluetooth&logoColor=%230082FC)](https://mrmezan06.github.io) &nbsp;
 
-## Laptop Configuration ![Laptop Configuration](https://img.shields.io/badge/Laptop-Configuration-brightgreen)
+### Laptop Configuration ![Laptop Configuration](https://img.shields.io/badge/Laptop-Configuration-brightgreen)
 
 [![Asus](https://img.shields.io/badge/RAM-8GB-brightgreen?style=for-the-badge&logo=Asus)](https://asus.com/bd/)
 [![Intel Processor](https://img.shields.io/badge/Processor-Intel%20Core%20i7%206th%20Gen-%230071C5?style=for-the-badge&logo=intel&logoColor=%230071C5)](https://ark.intel.com/content/www/us/en/ark/products/88194/intel-core-i76500u-processor-4m-cache-up-to-3-10-ghz.html) &nbsp;
