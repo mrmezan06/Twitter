@@ -1,0 +1,41 @@
+.Auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 4rem;
+  position: relative;
+}
+
+.Auth > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Left Side */
+.a-left {
+  gap: 2rem;
+}
+
+.a-left > img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.WebName > h1 {
+  font-size: 3rem;
+  background-color: red;
+  background-image: var(--buttonBg);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  /* color: transparent; */
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.WebName > h6 {
+  font-size: 0.85rem;
+}
