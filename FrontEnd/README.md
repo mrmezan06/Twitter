@@ -2,11 +2,11 @@
 
 ### Technology
 
-![React](https://img.shields.io/badge/React-blue?style=for-the-badge&logo=react)
-![ManTime](https://img.shields.io/badge/ManTime-gray?style=for-the-badge&logo=javascript)
-![Axios](https://img.shields.io/badge/Axios-gray?style=for-the-badge&logo=javascript)
-![React-Unicons](https://img.shields.io/badge/React-Unicons-orange?style=for-the-badge&logo=react)
-![CSS](https://img.shields.io/badge/CSS-orange?style=for-the-badge&logo=css3)
+![React](https://img.shields.io/badge/React-blue?logo=react)
+![ManTime](https://img.shields.io/badge/ManTime-gray?logo=javascript)
+![Axios](https://img.shields.io/badge/Axios-gray?logo=javascript)
+![React-Unicons](https://img.shields.io/badge/React-Unicons-orange?logo=react)
+![CSS](https://img.shields.io/badge/CSS-orange?logo=css3)
 
 ## [MantimeModel](https://mantime.dev)
 
