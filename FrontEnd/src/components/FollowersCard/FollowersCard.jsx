@@ -30,3 +30,5 @@ const FollowersCard = () => {
 };
 
 export default FollowersCard;
+
+// 52:25
