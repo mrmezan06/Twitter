@@ -32,13 +32,13 @@ export const updateUser = async (req, res) => {
       });
       res.status(200).json(user);
     } else {
-      return res
-        .status(401)
-        .json({
-          message: "Unauthorized! You can only update your own account!",
-        });
+      return res.status(401).json({
+        message: "Unauthorized! You can only update your own account!",
+      });
     }
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
 };
+
+// 1:07:59
