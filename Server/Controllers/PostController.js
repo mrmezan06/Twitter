@@ -72,14 +72,17 @@ export const likePost = async (req, res) => {
 // Get a timeline post
 export const getTimelinePosts = async (req, res) => {
   try {
-    const currentUser = await userModel.findById(req.body.userId);
+    const currentUser = await userModel.findById(req.params.id);
     const userPosts = await postModel.find({ userId: currentUser._id });
     const friendPosts = await Promise.all(
       currentUser.following.map((friendId) => {
         return postModel.find({ userId: friendId });
       })
     );
-    res.json(userPosts.concat(...friendPosts));
+    res.json(
+      userPosts.concat(...friendPosts).sort((a, b) => b.createdAt - a.createdAt)
+    );
+    // Latest post will be on top
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
