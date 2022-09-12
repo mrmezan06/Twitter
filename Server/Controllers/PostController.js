@@ -1,4 +1,5 @@
 import postModel from "../Models/postModel.js";
+import userModel from "../Models/userModel.js";
 import mongoose from "mongoose";
 
 // create a post
@@ -63,6 +64,22 @@ export const likePost = async (req, res) => {
       await post.updateOne({ $pull: { likes: req.body.userId } });
       res.status(200).json("The post has been disliked");
     }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// Get a timeline post
+export const getTimelinePosts = async (req, res) => {
+  try {
+    const currentUser = await userModel.findById(req.body.userId);
+    const userPosts = await postModel.find({ userId: currentUser._id });
+    const friendPosts = await Promise.all(
+      currentUser.following.map((friendId) => {
+        return postModel.find({ userId: friendId });
+      })
+    );
+    res.json(userPosts.concat(...friendPosts));
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
