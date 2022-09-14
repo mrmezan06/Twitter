@@ -38,6 +38,7 @@
   border: none;
   border-radius: 0.5rem;
   background: var(--buttonBg);
+  margin-top: -40px;
   transition: all 100ms ease-out;
 }
 
