@@ -1,9 +1,12 @@
 import React from "react";
 import "./Auth.css";
 import Logo from "../../img/logo.png";
+import { useDispatch } from "react-redux";
+import { login, signup } from "../../actions/AuthAction";
 
 const Auth = () => {
   const [isLogin, setIsLogin] = React.useState(true);
+  const dispatch = useDispatch();
   const [data, setData] = React.useState({
     firstname: "",
     lastname: "",
@@ -11,17 +14,26 @@ const Auth = () => {
     confirmpass: "",
     username: "",
   });
+
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
+
   const [confirm, setConfirm] = React.useState(true);
+
   const handleSignup = (e) => {
     e.preventDefault();
     if (data.password === data.confirmpass) {
       setConfirm(true);
+      dispatch(signup(data));
     } else {
       setConfirm(false);
     }
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(login(data));
   };
   return (
     <div className="Auth">
@@ -34,7 +46,7 @@ const Auth = () => {
       </div>
       {isLogin ? (
         <div className="a-right">
-          <form className="infoForm authForm loginForm">
+          <form className="infoForm authForm loginForm" onSubmit={handleLogin}>
             <h3>Log In</h3>
 
             <div>
