@@ -49,6 +49,11 @@
   border: 2px solid var(--orange);
 }
 
+.button:disabled {
+  pointer-events: none;
+  background: silver;
+}
+
 /* Removing Scrollbar */
 ::-webkit-scrollbar {
   display: none;

@@ -1,12 +1,14 @@
 import React from "react";
 import "./Auth.css";
 import Logo from "../../img/logo.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login, signup } from "../../actions/AuthAction";
 
 const Auth = () => {
-  const [isLogin, setIsLogin] = React.useState(true);
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.auth.loading);
+  console.log(loading);
+  const [isLogin, setIsLogin] = React.useState(true);
   const [data, setData] = React.useState({
     firstname: "",
     lastname: "",
@@ -78,7 +80,9 @@ const Auth = () => {
                 <span style={{ fontWeight: 700 }}>Sign up</span>
               </span>
             </div>
-            <button className="button info-button">Login</button>
+            <button className="button info-button" disabled={loading}>
+              {loading ? "Loading..." : "Log In"}
+            </button>
           </form>
         </div>
       ) : (
@@ -145,8 +149,12 @@ const Auth = () => {
                 <span style={{ fontWeight: 700 }}>Login</span>
               </span>
             </div>
-            <button className="button info-button" type="submit">
-              Signup
+            <button
+              className="button info-button"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Loading..." : "Signup"}
             </button>
           </form>
         </div>
@@ -157,4 +165,4 @@ const Auth = () => {
 
 export default Auth;
 
-// 19.47
+// 52:21
