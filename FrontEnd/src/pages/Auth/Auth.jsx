@@ -7,7 +7,7 @@ import { login, signup } from "../../actions/AuthAction";
 const Auth = () => {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.auth.loading);
-  console.log(loading);
+  // console.log(loading);
   const [isLogin, setIsLogin] = React.useState(true);
   const [data, setData] = React.useState({
     firstname: "",
