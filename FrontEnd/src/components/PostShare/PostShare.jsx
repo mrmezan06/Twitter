@@ -11,6 +11,8 @@ import {
 } from "@iconscout/react-unicons";
 import { useState } from "react";
 import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { createPost, uploadImage } from "../../actions/UploadAction";
 
 const PostShare = () => {
   const [image, setImage] = useState(null);
@@ -21,11 +23,44 @@ const PostShare = () => {
       setImage(img);
     }
   };
+  const { user } = useSelector((state) => state.auth.authData);
+  const descRef = useRef();
+  const dispatch = useDispatch();
+  const loading = useSelector((state) => state.post.uploading);
+
+  const reset = () => {
+    setImage(null);
+    descRef.current.value = "";
+  };
+
+  const handleShare = (e) => {
+    e.preventDefault();
+    const newPost = {
+      userId: user._id,
+      desc: descRef?.current.value,
+    };
+    if (image) {
+      const data = new FormData();
+      const fileName = Date.now() + image.name;
+      data.append("name", fileName);
+      data.append("file", image);
+      newPost.image = fileName;
+      try {
+        dispatch(uploadImage(data));
+      } catch (err) {
+        console.log(err);
+      }
+      console.log(newPost);
+    }
+    dispatch(createPost(newPost));
+    reset();
+  };
+
   return (
     <div className="PostShare">
       <img src={ProfileImage} alt="" />
       <div>
-        <input type="text" placeholder="What's happening" />
+        <input ref={descRef} type="text" placeholder="What's happening" />
         <div className="postOptions">
           <div
             className="option"
@@ -47,7 +82,13 @@ const PostShare = () => {
             <UilSchedule />
             Schedule
           </div>
-          <button className="btn-share ps-button">Share</button>
+          <button
+            className="btn-share ps-button"
+            onClick={handleShare}
+            disabled={loading}
+          >
+            {loading ? "Uploading..." : "Share"}
+          </button>
           <div style={{ display: "none" }}>
             <input
               type="file"
@@ -69,3 +110,5 @@ const PostShare = () => {
 };
 
 export default PostShare;
+
+// 1:36:00
