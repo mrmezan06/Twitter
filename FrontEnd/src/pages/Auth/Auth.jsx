@@ -164,5 +164,3 @@ const Auth = () => {
 };
 
 export default Auth;
-
-// 52:21
