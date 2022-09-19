@@ -1,5 +1,6 @@
 import userModel from "../Models/userModel.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 export const registerUser = async (req, res) => {
   const user = await userModel.findOne({ username: req.body.username });
@@ -14,8 +15,16 @@ export const registerUser = async (req, res) => {
   const newUser = new userModel(req.body);
 
   try {
-    await newUser.save();
-    res.status(200).json(newUser);
+    const user = await newUser.save();
+    const token = jwt.sign(
+      {
+        username: user.username,
+        id: user._id,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+    res.status(200).json({ user, token });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
