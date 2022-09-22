@@ -18,7 +18,10 @@ const RightSide = () => {
         <img src={Comment} alt="" />
       </div>
       <TrendCard />
-      <button className="button r-button" onClick={() => setModalOpened(true)}>
+      <button
+        className="sharebtn r-button"
+        onClick={() => setModalOpened(true)}
+      >
         Share
       </button>
       <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} />
