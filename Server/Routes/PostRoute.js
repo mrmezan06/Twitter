@@ -3,6 +3,7 @@ import {
   createPost,
   deletePost,
   getPost,
+  getPostByUser,
   getTimelinePosts,
   likePost,
   updatePost,
@@ -15,6 +16,7 @@ router.put("/:id", updatePost);
 router.delete("/:id", deletePost);
 router.put("/:id/like", likePost);
 router.get("/:id/timeline", getTimelinePosts);
+router.get("/:uid/posts", getPostByUser);
 
 export default router;
 

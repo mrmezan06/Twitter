@@ -23,6 +23,16 @@ export const getPost = async (req, res) => {
   }
 };
 
+// Get all post by user._id
+export const getPostByUser = async (req, res) => {
+  try {
+    const posts = await postModel.find({ userId: req.params.uid });
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 // Update a post
 export const updatePost = async (req, res) => {
   try {
