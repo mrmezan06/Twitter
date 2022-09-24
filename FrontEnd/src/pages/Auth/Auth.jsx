@@ -1,13 +1,15 @@
-import React from "react";
 import "./Auth.css";
 import Logo from "../../img/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { login, signup } from "../../actions/AuthAction";
+import React from "react";
+import { useEffect } from "react";
 
 const Auth = () => {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.auth.loading);
-  // console.log(loading);
+  const error = useSelector((state) => state.auth.error);
+  const [alertReady, setAlertReady] = React.useState(false);
   const [isLogin, setIsLogin] = React.useState(true);
   const [data, setData] = React.useState({
     firstname: "",
@@ -32,11 +34,18 @@ const Auth = () => {
       setConfirm(false);
     }
   };
-
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     dispatch(login(data));
+    setAlertReady(error);
   };
+
+  useEffect(() => {
+    if (alertReady) {
+      alert("Invalid username or password");
+    }
+  }, [alertReady]);
+
   return (
     <div className="Auth">
       <div className="a-left">
