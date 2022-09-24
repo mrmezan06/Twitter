@@ -6,14 +6,20 @@ import Comment from "../../img/comment.png";
 import { UilSetting } from "@iconscout/react-unicons";
 import TrendCard from "../TrendCard/TrendCard";
 import ShareModal from "../ShareModal/ShareModal";
+import { useNavigate } from "react-router-dom";
 
 const RightSide = () => {
   const [modalOpened, setModalOpened] = useState(false);
+  const navigate = useNavigate();
+  // Navigate to the profile setting page
+  const handleSetting = () => {
+    navigate("/profile");
+  };
   return (
     <div className="RightSide">
       <div className="navIcons">
         <img src={Home} alt="" />
-        <UilSetting />
+        <UilSetting onClick={handleSetting} />
         <img src={Noti} alt="" />
         <img src={Comment} alt="" />
       </div>

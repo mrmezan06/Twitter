@@ -21,7 +21,6 @@ const ProfileCard = () => {
   useEffect(() => {
     getPosts(user?._id);
   }, [user?._id]);
-
   return (
     <div className="ProfileCard">
       <div className="ProfileImages">
