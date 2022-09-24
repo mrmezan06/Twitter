@@ -2,10 +2,20 @@ import React from "react";
 import "./FollowersCard.css";
 
 import { Followers } from "../../Data/FollowersData";
+import { useDispatch } from "react-redux";
+import { logout } from "../../actions/AuthAction";
 
 const FollowersCard = () => {
+  const dispatch = useDispatch();
+  const logoutBtn = () => {
+    dispatch(logout());
+    window.location.reload();
+  };
   return (
     <div className="FollowersCard">
+      <button className="btn-share ps-button" onClick={logoutBtn}>
+        Logout
+      </button>
       <h3>Who is following you</h3>
       {Followers.map((follower, id) => {
         return (
